@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MeetingRoomScheduler.ViewModels;
 using Xamarin.Forms;
 
 namespace MeetingRoomScheduler
@@ -16,6 +17,9 @@ namespace MeetingRoomScheduler
         public MainPage()
         {
             InitializeComponent();
+
+            MeetingViewModel viewModel = new MeetingViewModel();
+            schedule.DataSource = viewModel.Meetings;
         }
     }
 }

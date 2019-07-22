@@ -65,6 +65,9 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Assets\Font Awesome 5 Brands-Regular-400.otf" />
+    <None Include="Assets\Font Awesome 5 Free-Regular-400.otf" />
+    <None Include="Assets\Font Awesome 5 Free-Solid-900.otf" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -129,5 +132,8 @@
       <Project>{6DF7B54A-736C-4374-B64C-DF9A980382C6}</Project>
       <Name>MeetingRoomScheduler</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\" />
   </ItemGroup>
 </Project>

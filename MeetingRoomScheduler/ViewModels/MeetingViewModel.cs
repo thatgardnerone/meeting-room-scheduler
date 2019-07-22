@@ -1,28 +1,67 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Windows.Input;
+using MeetingRoomScheduler.Pages;
+using Syncfusion.SfSchedule.XForms;
 using Xamarin.Forms;
 
 namespace MeetingRoomScheduler.ViewModels
 {
     public class MeetingViewModel
     {
-        public ObservableCollection<Meeting> Meetings { get; set; }
-
-        List<string> eventNameCollection;
-        List<Color> colorCollection;
+        private List<string> eventNameCollection;
+        private List<Color> colorCollection;
 
         public MeetingViewModel()
         {
             Meetings = new ObservableCollection<Meeting>();
 
+            // Sample data
             CreateEventNameCollection();
             CreateColorCollection();
             CreateAppointments();
+
+            // Interactivity
+            ScheduleCellTapped = new Command<CellTappedEventArgs>(CellTapped);
+            ScheduleCellDoubleTapped = new Command<CellTappedEventArgs>(DoubleTapped);
+            ScheduleCellLongPressed = new Command<CellTappedEventArgs>(LongPressed);
+            ScheduleVisibleDatesChanged = new Command<VisibleDatesChangedEventArgs>(VisibleDatesChanged);
+        }
+
+        public ObservableCollection<Meeting> Meetings { get; set; }
+
+        public ICommand ScheduleCellTapped { get; set; }
+
+        public ICommand ScheduleCellDoubleTapped { get; set; }
+
+        public ICommand ScheduleCellLongPressed { get; set; }
+
+        public ICommand ScheduleVisibleDatesChanged { get; set; }
+
+        private void CellTapped(CellTappedEventArgs args)
+        {
+            var selectedDateTime = args.Datetime;
+        }
+
+        private void DoubleTapped(CellTappedEventArgs args)
+        {
+            var selectedDateTime = args.Datetime;
+        }
+
+        private void LongPressed(CellTappedEventArgs args)
+        {
+            var selectedDateTime = args.Datetime;
+        }
+
+        private void VisibleDatesChanged(VisibleDatesChangedEventArgs args)
+        {
+            var visibleDates = args.visibleDates;
         }
 
         private void CreateEventNameCollection()
         {
+            // Fake meeting names
             eventNameCollection = new List<string>
             {
                 "General Meeting",
@@ -41,6 +80,7 @@ namespace MeetingRoomScheduler.ViewModels
 
         private void CreateColorCollection()
         {
+            // TODO: color scheme?
             colorCollection = new List<Color>
             {
                 Color.FromHex("#FF339933"),
@@ -58,6 +98,7 @@ namespace MeetingRoomScheduler.ViewModels
 
         private void CreateAppointments()
         {
+            // Fake appointments
             Random randomTime = new Random();
             List<Point> randomTimeCollection = GettingTimeRanges();
             DateTime date;

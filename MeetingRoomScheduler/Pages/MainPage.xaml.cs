@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MeetingRoomScheduler.ViewModels;
+using Syncfusion.SfSchedule.XForms;
 using Xamarin.Forms;
 
 namespace MeetingRoomScheduler
@@ -18,8 +19,14 @@ namespace MeetingRoomScheduler
         {
             InitializeComponent();
 
+            // Add data from MeetingViewModel
             MeetingViewModel viewModel = new MeetingViewModel();
             schedule.DataSource = viewModel.Meetings;
+
+            // TODO: block out dates that have been booked off
+            // https://help.syncfusion.com/xamarin/sfschedule/monthview?cs-save-lang=1&cs-lang=xaml#restricted-days-in-month
+
+            schedule.ShowAppointmentsInline = true;
         }
     }
 }

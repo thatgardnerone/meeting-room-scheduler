@@ -65,9 +65,6 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <None Include="Assets\Font Awesome 5 Brands-Regular-400.otf" />
-    <None Include="Assets\Font Awesome 5 Free-Regular-400.otf" />
-    <None Include="Assets\Font Awesome 5 Free-Solid-900.otf" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -134,6 +131,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets\" />
+    <BundleResource Include="Resources\fa-brands-regular.otf" />
+    <BundleResource Include="Resources\fa-regular.otf" />
+    <BundleResource Include="Resources\fa-solid.otf" />
   </ItemGroup>
 </Project>

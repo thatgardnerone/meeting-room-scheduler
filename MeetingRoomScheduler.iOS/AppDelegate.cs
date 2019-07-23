@@ -26,6 +26,13 @@ namespace MeetingRoomScheduler.iOS
 
             global::Xamarin.Forms.Forms.Init();
             SfScheduleRenderer.Init();
+
+            //UINavigationBar.Appearance.SetTitleTextAttributes(new UITextAttributes
+            //{
+            //    TextColor = true ? UIColor.White : UIColor.Black,
+            //    Font = UIFont.FromName("Font Awesome 5 Brands", 24)
+            //});
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

@@ -8,6 +8,32 @@
     mc:Ignorable="d"
     x:Class="MeetingRoomScheduler.MainPage"
     Title="Meeting Room Scheduler">
+    <NavigationPage.TitleView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Text="Menu"
+                   Grid.Column="0"
+                   TextColor="White"
+                   HorizontalTextAlignment="Start" />
+            <Label Text="Title"
+                   Grid.Column="1"
+                   TextColor="White"
+                   FontSize="Default"
+                   HorizontalTextAlignment="Center" />
+            <Label Text="&#xf1de;"
+                   FontFamily="Font Awesome 5 Free"
+                   Grid.Column="2"
+                   TextColor="White"
+                   HorizontalTextAlignment="End" />
+        </Grid>
+    </NavigationPage.TitleView>
     <syncfusion:SfSchedule x:Name="schedule"
                            ScheduleView="MonthView"
                            CellTappedCommand="{Binding ScheduleCellTapped}"
